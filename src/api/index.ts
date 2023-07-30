@@ -1,5 +1,6 @@
 import axios from "axios";
-import { Credits, FullCredits, Movie, MovieSearch } from "./types";
+import { Configuration, Credits, FullCredits, Movie, MovieSearch } from "./types";
+import { createContext } from "react";
 
 const BASE_URL = "https://api.themoviedb.org";
 
@@ -35,3 +36,5 @@ export default class API {
         return fullCredits.cast;
     }
 }
+
+export const APIContext = createContext(new API())

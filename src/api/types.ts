@@ -55,3 +55,12 @@ export const FullCredits = z.object({
 });
 
 export type FullCredits = z.infer<typeof FullCredits>;
+
+export const Configuration = z.object({
+    images: z.object({
+        secure_base_url: z.string(),
+        poster_sizes: z.array(z.string())
+    })
+});
+
+export type Configuration = z.infer<typeof Configuration>;

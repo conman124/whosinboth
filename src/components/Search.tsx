@@ -5,7 +5,7 @@ export default function Search(props: {onSubmit: (movie1:string,movie2:string) =
   const [movie2, setMovie2] = useState("");
 
   return (
-    <div className="md:flex md:justify-center w-full p-8 font-sans text-xl">
+    <div className="md:flex md:justify-center w-full p-8">
         <div className="w-full md:w-2/3 lg:w-1/2 text-center">
             <form onSubmit={()=>props.onSubmit(movie1, movie2)}>
                 Who stars in both
