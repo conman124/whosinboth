@@ -18,15 +18,25 @@ function PosterImage({imagePath}: {imagePath: string})
     );
 }
 
+function ProfileImage({imagePath}: {imagePath: string})
+{
+    return (
+        <React.Fragment>
+            <img src={imageUrl(imagePath, "w45")} className="lg:hidden" />
+            <img src={imageUrl(imagePath, "w185")} className="hidden lg:block" />
+        </React.Fragment>
+    );
+}
+
 function Row({person1, person2}: {person1: Credit, person2: Credit})
 {
-    let profile = person1.profile_path ? <img src={imageUrl(person1.profile_path, "w45")} className="rounded-full" /> : null;
+    let profile = person1.profile_path ? <ProfileImage imagePath={person1.profile_path} /> : null;
 
     return (
         <tr>
-            <td className="p-4">
+            <td className="p-4 flex flex-col justify-center">
                 {profile}
-                {person1.name}
+                <div className="text-center">{person1.name}</div>
             </td>
             <td className="p-4">
                 {person1.character}
